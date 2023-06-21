@@ -1,6 +1,55 @@
-body{
-    background-color: blue;
-}
-h1{
-    color: white
-}
+  body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 7500px;
+      padding: 48px;
+      background: rgb(55, 67, 170);
+      color: white;
+  }
+  .weather-app{
+    background-color: rgb(90, 107, 255);
+    margin: 0 auto;
+    border:3px;
+    border-radius: 10px;
+    padding-bottom: 25px;
+  }
+  .city-search{
+    padding-bottom: 10px;
+  }
+  .city-input{
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+  }
+  .input-button{
+    background-color: rgb(158, 168, 255);
+    border: 0px;
+    border-radius: 5px;
+  }
+  .other{
+    font-size: 20px;
+  }
+  .city{
+    font-size: 87px;
+    color:white;
+  }
+
+  .temp {
+      color: white;
+  }
+
+  .weather {
+      font-size: 20px;
+  }
+
+  h1 {
+      font-size: 30px;
+      color: darkslategray;
+  }
+
+  .temp {
+      font-size: 30px;
+  }
+  li{
+    list-style: none;
+    font-size: 25;
+  }
