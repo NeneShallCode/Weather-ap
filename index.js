@@ -1,3 +1,15 @@
+function formatDate(timestamp){
+ let date = new Date(timestamp);
+ let hours = date.getHours();
+ let min = date.getMinutes();
+ let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ let day = days[date.getDay()];
+ if (min < 10){
+    min=`0${min}`
+ }
+ return `${day}, ${hours}:${min}`
+}
+
 function showTemp(response){
   console.log(response.data)
   let tempEl = document.querySelector("#temp");
@@ -5,11 +17,13 @@ function showTemp(response){
   let weatherEl = document.querySelector("#describe");
   let humidEl = document.querySelector("#humidity");
   let windEl = document.querySelector("#wind");
+  let dateEl = document.querySelector("#time")
   tempEl.innerHTML = Math.round(response.data.main.temp);
   cityEl.innerHTML = response.data.name;
   weatherEl.innerHTML = response.data.weather[0].description;
   humidEl.innerHTML = response.data.main.humidity;
   windEl.innerHTML = Math.round(response.data.wind.speed);
+  dateEl.innerHTML = formatDate(response.data.dt * 1000)
 }
 
 let apiKey="514a1ffade9078bc9c2d40d114f61a0b";
