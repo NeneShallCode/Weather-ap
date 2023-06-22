@@ -12,25 +12,27 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
         <title>Weather</title>
 </head>
 
 <body>
   <div class="city-search">
     <form>
-      <input type="text" class="city-input"name="city-input" id="city-input" placeholder="Name a city!"/>
+      <input type="text" class="city-input"name="city-input" id="city-input" placeholder="Name a city"/>
       <button class="input-button">Lets Go!</button>
     </form>
   </div>
   <div class="weather-app">
-    <h1 class="city">
-      Seattle
+    <h1 class="city" id="city">
     </h1>
       <div class="row">
         <div class="col-6">
-          <h2 class="temp">
-            75°F|°C
-          </h2>
+          <div class="stuf">
+            <img src="http://openweathermap.org/img/wn/04d@2x.png">
+            <strong id="temp">75</strong>
+            <span class="units">°C|<a href="#" class = "celcius">°F</a></span>
+          </div>
         </div>
         <div class="col-6">
           <ul class="other">
@@ -38,21 +40,20 @@
               Percepitation: 20%
             </li>
             <li>
-              Wind: 15mph
+              Wind: <span id="wind"></span>Km/H
             </li>
             <li>
-              Humidity: 80%
+              Humidity: <span id="humidity"></span>%
             </li>
           </ul>
         </div>
       </div>
     <ul>
-      <li class="weather">
-        Sunny ☀️
-      </li>
-      <li>
+      <h3>
+      <li id="describe" class="describe"></li>
+      
         Tuesday, 8:00
-      </li>
+      </h3>
     </ul>
     <ul>
       <li>

@@ -24,30 +24,40 @@
     background-color: rgb(158, 168, 255);
     border: 0px;
     border-radius: 5px;
+    padding:5px;
   }
   .other{
-    font-size: 20px;
+    font-size: 18px;
   }
   .city{
-    font-size: 87px;
+    font-size: 60px;
     color:white;
   }
 
-  .temp {
+  strong{
       color: white;
+      font-size: 50px
   }
 
-  .weather {
-      font-size: 20px;
+  .celcius{
+    color:white;
+    text-decoration: none;
+  }
+
+  .units{
+  color:white;
+  font-size: 20px;
   }
 
   h1 {
       font-size: 30px;
       color: darkslategray;
   }
-
-  .temp {
-      font-size: 30px;
+  h3 {
+    text-transform: capitalize;
+  }
+  .describe {
+    font-size: 20px;
   }
   li{
     list-style: none;
