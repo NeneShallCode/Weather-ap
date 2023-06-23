@@ -38,8 +38,11 @@
       color: white;
       font-size: 50px
   }
-
-  .celcius{
+  .celsius{
+    color: white;
+    text-decoration: none;
+  }
+  .farenheit{
     color:white;
     text-decoration: none;
   }

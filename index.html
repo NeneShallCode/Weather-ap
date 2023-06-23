@@ -17,10 +17,10 @@
 </head>
 
 <body>
-  <div class="city-search">
-    <form>
+  <div>
+    <form id="city-search">
       <input type="text" class="city-input"name="city-input" id="city-input" placeholder="Name a city"/>
-      <button class="input-button">Lets Go!</button>
+      <input type="submit" class="input-button"></button>
     </form>
   </div>
   <div class="weather-app">
@@ -31,7 +31,9 @@
           <div class="stuf">
             <img src="" id="icon">
             <strong id="temp">75</strong>
-            <span class="units">°C|<a href="#" class = "celcius">°F</a></span>
+            <span class="units"><a href="#" class = "farenheit" id = farenheit-link>°C</a>|
+            <a href="#" class="celsius" id=celsius-link>°F</a></span>
+            
           </div>
         </div>
         <div class="col-6">
