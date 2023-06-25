@@ -10,6 +10,33 @@ function formatDate(timestamp){
  return `${day}, ${hours}:${min}`
 }
 
+function displayForecast(){
+  let forecastEl = document.querySelector("#week-days")
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon","Tues","Wed","Thurs","Fri"]
+  days.forEach(function(day){
+  forecastHTML =  forecastHTML + `
+    <div class="col-2 mon">
+      <div class="weather-fore-date">
+         ${day}
+      </div>
+      <br>
+      <img src = "http://openweathermap.org/img/wn/50d@2x.png" width="60">
+      <br>
+      <div class="weather-fore-temp">
+        <span class="weather-fore-max">18</span> 
+        <span class="weather-fore-min">12</span>
+      </div>
+    </div>
+  `;
+  })
+
+  
+forecastHTML = forecastHTML + `</div>`
+
+  forecastEl.innerHTML = forecastHTML;
+}
+
 function showTemp(response){
   console.log(response.data)
   let tempEl = document.querySelector("#temp");
@@ -67,3 +94,4 @@ farenheitLink.addEventListener("click", showFarenheit)
 
 let celsiusLink = document.querySelector("#celsius-link")
 celsiusLink.addEventListener("click", showCelsius)
+displayForecast()
