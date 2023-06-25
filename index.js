@@ -37,8 +37,14 @@ forecastHTML = forecastHTML + `</div>`
   forecastEl.innerHTML = forecastHTML;
 }
 
+function getFore (coordinates){
+  console.log(coordinates)
+  let apiKey = "514a1ffade9078bc9c2d40d114f61a0b"
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=&appid=${apiKey}&units=metric`
+  console.log(apiUrl)
+}
+
 function showTemp(response){
-  console.log(response.data)
   let tempEl = document.querySelector("#temp");
   let cityEl = document.querySelector("#city");
   let weatherEl = document.querySelector("#describe");
@@ -56,6 +62,8 @@ function showTemp(response){
   windEl.innerHTML = Math.round(response.data.wind.speed);
   dateEl.innerHTML = formatDate(response.data.dt * 1000);
   iconEl.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+  getFore(response.data.coord)
 }
 
 function search(city){
