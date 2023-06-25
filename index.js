@@ -40,8 +40,7 @@ forecastHTML = forecastHTML + `</div>`
 function getFore (coordinates){
   console.log(coordinates)
   let apiKey = "514a1ffade9078bc9c2d40d114f61a0b"
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=&appid=${apiKey}&units=metric`
-  console.log(apiUrl)
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
 }
 
 function showTemp(response){
