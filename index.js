@@ -10,25 +10,29 @@ function formatDate(timestamp){
  return `${day}, ${hours}:${min}`
 }
 
-function displayForecast(){
+function displayForecast(response){
+  let forecast = response.data.daily;
+
   let forecastEl = document.querySelector("#week-days")
+  
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon","Tues","Wed","Thurs","Fri"]
-  days.forEach(function(day){
-  forecastHTML =  forecastHTML + `
-    <div class="col-2 mon">
-      <div class="weather-fore-date">
-         ${day}
+  forecast.forEach(function(forecastDay){
+    let date = new Date(forecastDay.dt * 1000);
+    let day = formatDate(date);
+    forecastHTML =  forecastHTML + `
+      <div class="col-2 mon">
+        <div class="weather-fore-date">
+          ${day}
+        </div>
+        <br>
+        <img src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}.png" width="60">
+        <br>
+        <div class="weather-fore-temp">
+          <span class="weather-fore-max">${forecastDay.temp.max}°</span> 
+          <span class="weather-fore-min">${forecastDay.temp.min}°</span>
+        </div>
       </div>
-      <br>
-      <img src = "http://openweathermap.org/img/wn/50d@2x.png" width="60">
-      <br>
-      <div class="weather-fore-temp">
-        <span class="weather-fore-max">18</span> 
-        <span class="weather-fore-min">12</span>
-      </div>
-    </div>
-  `;
+    `;
   })
 
   
@@ -41,6 +45,7 @@ function getFore (coordinates){
   console.log(coordinates)
   let apiKey = "514a1ffade9078bc9c2d40d114f61a0b"
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemp(response){
@@ -101,4 +106,3 @@ farenheitLink.addEventListener("click", showFarenheit)
 
 let celsiusLink = document.querySelector("#celsius-link")
 celsiusLink.addEventListener("click", showCelsius)
-displayForecast()
