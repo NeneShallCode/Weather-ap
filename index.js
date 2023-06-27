@@ -12,9 +12,9 @@ function formatDate(timestamp){
 
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000)
-  let day = day.getDay();
-  let days = ["Mon","Tue","Wed","Thu","Fri"]
-  return day;
+  let day = date.getDay();
+  let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+  return days[day];
 }
 
 function displayForecast(response) {
@@ -123,3 +123,5 @@ farenheitLink.addEventListener("click", showFarenheit)
 
 let celsiusLink = document.querySelector("#celsius-link")
 celsiusLink.addEventListener("click", showCelsius)
+
+search("Seattle");
